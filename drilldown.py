@@ -1,8 +1,6 @@
 import pandas as pd
 
-# Load data from the Excel file
-file_path = '/mnt/data/education_career_success.xlsx'
-df = pd.read_excel(file_path, sheet_name='education_career_success')
+df = pd.read_excel("education_career_success.xlsx", sheet_name="education_career_success")
 
 # Define hierarchy and relevant columns
 levels = ['Current_Job_Level', 'Field_of_Study', 'Gender']  # bottom to top
