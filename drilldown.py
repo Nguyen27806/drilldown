@@ -32,11 +32,12 @@ if uploaded_file:
 
     sunburst_data = df.groupby(["Gender", "Field_of_Study", "University_GPA_Group", "Career_Satisfaction_Group"]).size().reset_index(name="Count")
 
-    fig = px.sunburst(
-        sunburst_data,
-        path=["Gender", "Field_of_Study", "University_GPA_Group", "Career_Satisfaction_Group"],
-        values="Count",
-        title="Gender → Field → GPA → Career Satisfaction",
-    )
+fig = px.sunburst(
+    sunburst_data,
+    path=["Gender", "Field_of_Study", "University_GPA_Group", "Career_Satisfaction_Group"],
+    values="Count",
+    title="Gender → Field → GPA → Career Satisfaction",
+    maxdepth=2  # 👈 chỉ hiện 2 lớp đầu tiên
+)
 
-    st.plotly_chart(fig)
+
